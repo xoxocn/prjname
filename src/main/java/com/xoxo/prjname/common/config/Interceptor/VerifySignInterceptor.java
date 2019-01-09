@@ -22,6 +22,7 @@ public class VerifySignInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         if (!verifySignMethod(handler, request)) {
+            //直接抛出异常，交给统一异常类捕获
             throw new RespBaseException(ResponseEnum.sign_fail);
         }
         return true;
