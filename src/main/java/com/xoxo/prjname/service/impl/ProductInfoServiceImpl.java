@@ -36,9 +36,10 @@ public class ProductInfoServiceImpl implements ProductInfoService {
         String productInfoListStr;
         List<ProductInfoDTO> productInfoDTOS;
         List<ProductInfo> productInfos;
-        if("".equals("")){
-            throw new BuizException(ExceptionEnum.buiz_ex001);
-        }
+//        异常捕获测试
+//        if("".equals("")){
+//            throw new BuizException(ExceptionEnum.buiz_ex001);
+//        }
         //redis有就取出，没有就去数据库查询
         if (StringUtils.isEmpty((productInfoListStr = redisService.get(RedisConstant.Product.PRODUCT_INFOS)))) {
             productInfos = productInfoMapper.selectByExample(null);
