@@ -9,6 +9,7 @@ import com.xoxo.prjname.entity.ProductInfo;
 import com.xoxo.prjname.mapper.generic.ProductInfoMapper;
 import com.xoxo.prjname.redis.IRedisService;
 import com.xoxo.prjname.service.ProductInfoService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -23,6 +24,7 @@ import java.util.stream.Collectors;
  * @Author xiehua@zhongshuheyi.com
  * @Date 2019-01-08 15:45
  */
+@Slf4j
 @Service
 public class ProductInfoServiceImpl implements ProductInfoService {
 
@@ -48,6 +50,7 @@ public class ProductInfoServiceImpl implements ProductInfoService {
         } else {
             productInfos = JSONArray.parseArray(productInfoListStr, ProductInfo.class);
         }
+        log.info("查询商品信息，productInfos=={}",productInfos.toString());
         //数据转换，entity->dto
         productInfoDTOS = productInfos.stream().
                 map(e->{
