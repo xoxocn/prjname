@@ -12,7 +12,7 @@ server:
 ############################################################
 mybatis:
 #  config-location: classpath:mybatis/mybatis-config.xml    # mybatis配置文件所在路径
-  type-aliases-package: com.xoxo.prjname.entity.*       # 定义所有操作类的别名所在包
+  type-aliases-package: com.xoxo.demotity.*       # 定义所有操作类的别名所在包
   mapper-locations:                                     # 所有的mapper映射文件
   - classpath:mybatis/mapper/*/*.xml
 ############################################################
