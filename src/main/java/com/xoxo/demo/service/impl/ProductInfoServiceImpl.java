@@ -2,6 +2,8 @@ package com.xoxo.demo.service.impl;
 
 import com.alibaba.fastjson.JSONArray;
 import com.xoxo.demo.common.constants.RedisConstant;
+import com.xoxo.demo.common.enums.ExceptionEnum;
+import com.xoxo.demo.common.exception.BuizException;
 import com.xoxo.demo.dto.ProductInfoDTO;
 import com.xoxo.demo.entity.ProductInfo;
 import com.xoxo.demo.mapper.generic.ProductInfoMapper;
@@ -36,10 +38,10 @@ public class ProductInfoServiceImpl implements ProductInfoService {
         String productInfoListStr;
         List<ProductInfoDTO> productInfoDTOS;
         List<ProductInfo> productInfos;
-//        异常捕获测试
-//        if("".equals("")){
-//            throw new BuizException(ExceptionEnum.buiz_ex001);
-//        }
+        // 异常捕获测试
+        if("".equals("")){
+            throw new BuizException(ExceptionEnum.buiz_ex001);
+        }
         //redis有就取出，没有就去数据库查询
         if (StringUtils.isEmpty((productInfoListStr = redisService.get(RedisConstant.Product.PRODUCT_INFOS)))) {
             productInfos = productInfoMapper.selectByExample(null);

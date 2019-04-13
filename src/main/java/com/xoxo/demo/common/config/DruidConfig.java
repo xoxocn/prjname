@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * @Package com.learn.ssmmodules.config
- * @Description
+ * @Description druid Config
  * @Author xiehua@zhongshuheyi.com
  * @Date 2018-11-08 17:49
  */
