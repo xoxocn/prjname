@@ -53,7 +53,7 @@ spring:
   redis:
         #数据库索引
       cluster:
-          nodes: 47.105.162.64:7000,47.105.162.64:7001,47.105.162.64:7002
+          nodes: IP：port
       lettuce:
         pool:
           #最大连接数
